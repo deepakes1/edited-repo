@@ -1,0 +1,52 @@
+
+    @keyframes move-line {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  .animate-hr {
+    animation: move-line 6s infinite;
+    
+  }
+
+  @keyframes move-line-reverse {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0%;
+    }
+  }
+
+  .animate-hr-reverse {
+    animation: move-line-reverse 6s infinite;
+    
+  }
+
+.bg {
+  background: linear-gradient(to bottom, #639cd9 50%,#5454c5 50%);
+}
+
+
+.scroll-cancel {
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+}
+
+.scroll-cancel::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Webkit-based browsers */
+}
+
+
+.center-color {
+  background-color: #1d8cb8aa;
+}
+
+ .bg-left {
+  background-color: #715fd8;
+ }
+ 

@@ -3,61 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="output.css">
+    <!-- <link rel="stylesheet" href="output.css"> -->
+    <link rel="stylesheet" href="input.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 
-
-  <style>
-    @keyframes move-line {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-
-  .animate-hr {
-    animation: move-line 6s infinite;
-    
-  }
-
-  @keyframes move-line-reverse {
-    0% {
-      width: 100%;
-    }
-    100% {
-      width: 0%;
-    }
-  }
-
-  .animate-hr-reverse {
-    animation: move-line-reverse 6s infinite;
-    
-  }
-
-.bg {
-  background: linear-gradient(to bottom, #639cd9 50%,#5454c5 50%);
-}
-
-
-.scroll-cancel {
-  scrollbar-width: none; /* Hide scrollbar in Firefox */
-  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
-}
-
-.scroll-cancel::-webkit-scrollbar {
-  display: none; /* Hide scrollbar in Webkit-based browsers */
-}
-
-
-.center-color {
-  background-color: #1d8cb8aa;
-}
-
- .bg-left {
-  background-color: #715fd8;
- }
-  </style>
+  
 
 </head>
 <body>
@@ -134,16 +84,41 @@
       </div>
 
       <!-- center-side -->
-      <div class="w-[95vw] h-[90vh] md:w-[80vw]  md:h-[90vh] md:mt-[2%] mb-[2%] center-color rounded-3xl relative scroll-cancel">
+      <div class="h-[90vh] w-[90vw] mx-auto md:w-[80vw]  md:h-[90vh] md:mt-[2%] mb-[2%] center-color rounded-3xl relative scroll-cancel">
 
         <!-- fronty animation -->
 
-        <div id ="animation" class="absolute bottom-11 p-3  lg:bottom-11 lg:left-20 ">
+        <!-- large devices -->
+        <div id ="animation" class="hidden md:block bottom-11 p-3  lg:bottom-11 lg:left-20 ">
           <video src="./assests/New Project [252D67F].mp4" muted autoplay class="h-[75vh] "></video>
         </div>
 
+        <!-- small devices -->
+        <section class="md:hidden ml-0 isolate overflow-hidden " id = "small_animation">
+          <div class="absolute inset-0 -z-10  opacity-20"></div>
+          <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg]  shadow-xl  sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
+          <div class="mx-auto max-w-2xl lg:max-w-4xl">
+            <!-- <img class="mx-auto h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" alt=""> -->
+            <figure class="mt-10">
+              <blockquote class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                <p class="text-yellow-200">“Where imagination knows no bounds, I bring digital dreams to life. With code as my canvas, I paint vibrant user experiences. In the realm of full stack development, I create.”</p>
+              </blockquote>
+              <figcaption class="mt-10">
+                <img class="mx-auto h-24 w-24 object-cover rounded-full" src="https://res.cloudinary.com/dgdaxmst8/image/upload/v1721723153/WhatsApp_Image_2024-07-23_at_1.45.55_PM_ehpgjf.jpg" alt="">
+                <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+                  <div class="font-semibold text-yellow-200">Deepak ES</div>
+                  <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
+                    <circle cx="1" cy="1" r="1" />
+                  </svg>
+                  <div class="text-yellow-200">Full Stack Developer</div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
         <!-- about me -->
-        <div class="hidden w-[95vw] h-[90vh] md:w-[75vw] flex flex-col justify-between md:h-[90vh]  transition-all overflow-scroll scroll-cancel text-white bg " id = "homesection">
+        <div class="hidden w-[90vw] h-[90vh] md:w-[75vw] flex flex-col justify-between md:h-[90vh]  transition-all overflow-scroll scroll-cancel text-white bg " id = "homesection">
           <div class="p-5 mb-0 ">
             <h1 class="text-xl md:text-4xl font-bold">Wow, a whole page is just about me!</h1>
             <h1 class="mt-5 text-lg md:text-3xl">Me talking about myself</h1>
@@ -166,7 +141,7 @@
         </div>
 
         <!-- resume page -->
-        <div class="hidden w-[95vw] h-[90vh] md:w-[75vw]  md:h-[90vh]  transition-all overflow-scroll scroll-cancel md:overflow-hidden text-white bg " id = "resumesection">
+        <div class="hidden w-[90vw] h-[90vh] md:w-[75vw]  md:h-[90vh]  transition-all overflow-scroll scroll-cancel md:overflow-hidden text-white bg " id = "resumesection">
           <div class="flex flex-col justify-between">
             <div class="p-5">
             <h1 class="text-xl md:text-3xl font-bold">Ambitious and driven with a strong work ethic and a passion , seeking to make a meaningful impact and drive business success.</h1>
@@ -318,7 +293,7 @@
           <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden" id="certificate-modal">
             <div class="flex justify-center items-center h-full">
               <img src="" class="max-w-full max-h-full" id="certificate-image" alt="">
-              <button class="absolute top-0 right-0 text-4xl text-white" onclick="hideCertificate()">x</button>
+              <button class="absolute top-0 right-7 text-4xl text-white" onclick="hideCertificate()">x</button>
             </div>
           </div>
         </div>
@@ -419,133 +394,7 @@
 
 
 
-  <script>
-    let homebutton = document.getElementById("homebutton");
-let homesection = document.getElementById("homesection");
-
-let animation = document.getElementById("animation");
-
-let resumebutton = document.getElementById("resumebutton");
-let resumesection = document.getElementById("resumesection");
-
-let projectbutton = document.getElementById("projectbutton");
-let projectsection = document.getElementById("projectsection");
-
-let certificatebut = document.getElementById("certificatebut");
-let certificatesection = document.getElementById("certificatesection");
-
-let aboutbut = document.getElementById("aboutbut");
-let contactsection = document.getElementById("contactsection");
-
-
-const card1 = document.getElementById('card1');
-const card2 = document.getElementById('card2');
-const card3 = document.getElementById('card3');
-const card4 = document.getElementById('card4');
-const card5 = document.getElementById('card5');
-
-const card7 = document.getElementById('card7');
-const card_1 = document.getElementById('card-1');
-const card_3 = document.getElementById('card-3');
-
- function showCertificate(certificateName) {
-    const modal = document.getElementById('certificate-modal');
-    const image = document.getElementById('certificate-image');
-    image.src = `./assests/certificate/${certificateName}.jpg`;
-    modal.classList.remove('hidden');
-  }
-
-  function hideCertificate() {
-    const modal = document.getElementById('certificate-modal');
-    modal.classList.add('hidden');
-  }
-
-card1.addEventListener('click', () => {
-  window.open('https://js-mini-project-inw5.vercel.app/');
-});
-
-card2.addEventListener('click', () => {
-  window.open('https://chatgpt-design-tailwind-xk8p.vercel.app/');
-});
-
-card3.addEventListener('click', () => {
-  window.open('https://js-mini-project-navy.vercel.app/');
-});
-
-card4.addEventListener('click', () => {
-  window.open('https://movie-searcher-api.vercel.app/');
-});
-
-card5.addEventListener('click', () => {
-  window.open('https://react-user-generator-coral.vercel.app/');
-});
-
-card7.addEventListener('click', () => {
-  window.open('https://storage-application.vercel.app/');
-});
-
-card_1.addEventListener('click', () => {
-  window.open('https://netflix-clone-design.vercel.app/');
-});
-
-card_3.addEventListener('click', () => {
-  window.open('https://todo-firebase-orcin.vercel.app/');
-});
-
-
-
-homebutton.addEventListener("click", ()=> {
-    homesection.classList.remove("hidden")
-    animation.classList.add("hidden")
-    resumesection.classList.add("hidden")
-    projectsection.classList.add("hidden")
-    certificatesection.classList.add("hidden")
-    contactsection.classList.add("hidden")
-})
-resumebutton.addEventListener("click", ()=> {
-    homesection.classList.add("hidden")
-    animation.classList.add("hidden")
-    resumesection.classList.remove("hidden")
-    projectsection.classList.add("hidden")
-    certificatesection.classList.add("hidden")
-    contactsection.classList.add("hidden")
-})
-
-projectbutton.addEventListener("click", ()=> {
-    homesection.classList.add("hidden")
-    animation.classList.add("hidden")
-    resumesection.classList.add("hidden")
-    projectsection.classList.remove("hidden")
-    certificatesection.classList.add("hidden")
-    contactsection.classList.add("hidden")
-})
-
-
-certificatebut.addEventListener("click", ()=> {
-    homesection.classList.add("hidden")
-    animation.classList.add("hidden")
-    resumesection.classList.add("hidden")
-    projectsection.classList.add("hidden")
-    certificatesection.classList.remove("hidden")
-    contactsection.classList.add("hidden")
-})
-
-
-aboutbut.addEventListener("click", ()=> {
-    homesection.classList.add("hidden")
-    animation.classList.add("hidden")
-    resumesection.classList.add("hidden")
-    projectsection.classList.add("hidden")
-    certificatesection.classList.add("hidden")
-    contactsection.classList.remove("hidden")
-})
-
-
-
-
-
-
-  </script>
+  <script src="app.js"></script>
 </body>
 
 
